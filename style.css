@@ -1,0 +1,143 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
+
+
+header{
+
+    background-color: #E86A33;
+    padding-top: 0.5%;
+    padding-bottom: 1%;
+}
+
+header h1{
+
+    padding-left: 2%;
+    font-weight: bold;
+}
+
+
+.leftPanel{
+
+    position: absolute;
+    width: 56%;
+    height: 81%;
+    margin-left: 8%;
+
+}
+
+body{
+
+    background-color: #F2E3DB;
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.leftDiv{
+
+    height: 100%;
+
+}
+
+.rightPanel{
+    
+    position: absolute;
+    width: 35%;
+    height: 71%;
+    right: 0;
+
+}
+
+.rightDiv{
+
+    background-color: #DFF2DB;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 20px;
+    border-color: black;
+    height: 90%;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+#showPanel{
+
+    text-align: center;
+    padding-top: 28%;
+}
+
+.output{
+    text-align: center;
+
+}
+
+.output1{
+
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+
+}
+
+.writeSection{
+
+    resize: none;
+    display: block;
+    width: 98%;
+    height: 75%;
+    border: none;
+    outline: none;
+    padding-top: 5%;
+    background-color: #F2E3DB;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.buttons{
+
+    margin-top: 2%;
+    padding: 12px;
+    display: inline-block;
+    width: 20%;
+    font-weight: bold;
+    background-color: #41644A;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Source Code Pro', monospace;
+
+}
+
+.buttons1{
+
+    position: relative;
+    padding: 12px;
+    margin-top: 4%;
+    display: inline-block;
+    width: 20%;
+    font-weight: bold;
+    background-color: #41644A;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Source Code Pro', monospace;
+    margin-left: 30%;
+
+}
+
+.footDiv{
+
+    background-color: #263A29;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    padding-top: 1%;
+
+}
+
+.icons{
+
+    width: 3%;
+    padding-left: 1%;
+    padding-bottom: 1%;
+    display: block;
+    margin-left: 95%;
+}

@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basic Encryption</title>
+        <link rel="stylesheet" href="style.css">
+        
+    
+    </head>
+
+    <body>
+
+        <header>
+
+            <h1>Encryption</h1>
+
+        </header>
+
+        <main>
+
+            <section class="leftPanel">
+
+                <div class="leftDiv">
+
+                    <textarea autofocus class="writeSection" type="text" id="input" rows="10" cols="50" required placeholder="Write something here"></textarea>
+
+                    <button class="buttons" onclick="hidePanel() ; stringIdentifier(secret.value) ; encrypt( identifiedString )" name="vfy"> Encrypt </button>
+                    <button class="buttons" onclick="hidePanel() ; encryptedMessageIdentifier(secret.value) ; decrypt( identifiedString )" name="vfy"> Decrypt </button>
+
+                </div>
+
+            </section>
+
+            <section class="rightPanel">
+                
+                <div class="rightDiv">
+
+                    <p class="output1" type="text" id="output"></p>
+                    <h1 id="showPanel" class="rightPanelH1">No Encryptions Yet.</h1>
+                    <p id="showPanel2" class="output"> <---- Type a new message there.</p>
+                    
+                </div>
+                
+                <button class="buttons1" onclick="window.location.reload() ; showPanel()">Clear</button>
+                <button id="copyButton1" class="buttons" onclick="copyToClipBoard()">Copy</button>
+
+
+            </section>
+            
+
+        </main>
+
+
+        <footer>
+
+            <div class="footDiv">
+
+                <img class="icons" src="images/github.png">
+
+            </div>
+
+
+        </footer>
+
+        <script>
+
+            var secret = document.getElementById("input");
+            var button = document.querySelector("button");
+            var output = document.getElementById("output");
+            var identifiedString = [];
+            var encryptingSystem = ["enter","imes","ai","ober","ufat"];
+            const regexSystem = /(\enter|\imes|\ai|\ober|\ufat)/
+            const encryptMatch = RegExp(encryptingSystem.join("|\\"));
+            console.log(output);
+    
+        
+            function stringIdentifier( string ) {
+                
+                secret.value = "";
+        
+                for( i = 0; i < string.length; i++ ) {
+            
+                    var separation = string.charAt(i);
+                    identifiedString.push(separation);
+        
+                }
+
+                console.log(identifiedString)
+            }
+        
+            function encryptedMessageIdentifier( string ) {
+        
+                secret.value = "";
+                var enArray = [];
+        
+                for ( i = 0; i < string.length; i++ ) {
+        
+                    identifiedString = string.split((regexSystem)).filter((str) => str != '');
+        
+                }
+        
+                return identifiedString;
+            }
+        
+            function encrypt( encryptedArray ) {
+
+                output.value = "";
+        
+                for ( i = 0; i < encryptedArray.length; i++) {
+        
+                    var compareLetter = encryptedArray[i];
+        
+                    if ( compareLetter == "a" ) {
+                    
+                        encryptedArray[i] = encryptingSystem[2];
+        
+                    } else
+        
+                    if ( compareLetter == "e" ) {
+                    
+                        encryptedArray[i] = encryptingSystem[0];
+        
+                    }
+        
+                    if ( compareLetter == "i" ) {
+                    
+                        encryptedArray[i] = encryptingSystem[1];
+        
+                    } else
+        
+                    if ( compareLetter == "o" ) {
+        
+                        encryptedArray[i] = encryptingSystem[3];
+        
+                    } else
+        
+                    if ( compareLetter == "u" ) {
+                    
+                        encryptedArray[i] = encryptingSystem[4];
+        
+                    }
+        
+                }
+
+                var string = encryptedArray.join("");
+                return output.innerHTML = string;
+            }
+        
+            function decrypt( decryptedArray ) {
+        
+        
+                for ( i = 0; i < decryptedArray.length; i++ ) {
+        
+                    var compareLetter = decryptedArray[i];
+        
+                    if ( compareLetter == encryptingSystem[2] ) {
+                    
+                        decryptedArray[i] = "a";
+        
+                    } else
+        
+                    if ( compareLetter == encryptingSystem[0] ) {
+                    
+                        decryptedArray[i] = "e";
+        
+                    }
+        
+                    if ( compareLetter == encryptingSystem[1] ) {
+                    
+                        decryptedArray[i] = "i";
+        
+                    } else
+        
+                    if ( compareLetter == encryptingSystem[3] ) {
+        
+                        decryptedArray[i] = "o";
+        
+                    } else
+        
+                    if ( compareLetter == encryptingSystem[4] ) {
+                    
+                        decryptedArray[i] = "u";
+        
+                    }
+                }
+        
+                var string = decryptedArray.join("");
+                return output.innerHTML = string;
+        
+            }
+
+            function hidePanel() {
+
+                panel = document.getElementById("showPanel");
+                panel.style.visibility = 'hidden';
+                panel1 = document.getElementById("showPanel2");
+                panel1.style.visibility = 'hidden';
+                
+            }
+
+            function copyToClipBoard() {
+                let copyText = output.innerText;
+                navigator.clipboard.writeText(copyText);
+                document.getElementById("paste").style.display = "block";
+            }
+
+            function showPanel() {
+
+                panel = document.getElementById("showPanel");
+                panel.style.visibility = 'visible';
+                panel1 = document.getElementById("showPanel2");
+                panel1.style.visibility = 'visible';
+
+            }
+        
+        
+        
+        </script>
+
+    </body>
+
+
+</html>
